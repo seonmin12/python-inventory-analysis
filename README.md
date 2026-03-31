@@ -84,3 +84,9 @@ python_study/
 🇰🇷
 	•	matplotlib을 활용한 시각화 기능 추가
 	•	데이터 확장 및 분석 기능 고도화
+
+---
+## 📈 Visualization / 시각화
+
+### Category-wise Total Inventory Value / 카테고리별 총 재고 가치
+![Category Inventory Value](category_inventory_value.png)
