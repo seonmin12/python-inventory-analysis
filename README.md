@@ -52,18 +52,20 @@ CSV 파일을 읽어 데이터를 처리하고, 총 재고 가치 계산, 카테
 
 ## ▶️ How to Run
 
-```bash
+```
 python3 main.py
+```
 
 ---
 
 ## 📂 Project Structure
-
+```
  python-inventory-analysis/
 ├── main.py
 ├── inventory.csv
 ├── category_inventory_value.png
 └── README.md
+```
 
 ---
 
