@@ -6,8 +6,35 @@ df = pd.read_csv("inventory.csv")
 
 # 총 재고 가치 계산
 df["total_value"] = df["price"] * df["quantity"]
+
+# 원본 데이터 따로 저장
+df_all = df.copy()
+
 print("=== 전체 재고 데이터 ===")
 print(df)
+
+
+# 전체 그래프 먼저 생성
+all_summary = df_all.groupby("category")["total_value"].sum()
+
+plt.figure(figsize=(8, 5))
+all_summary.plot(kind="bar")
+plt.title("Total Inventory Value (All Categories)")
+plt.xlabel("Category")
+plt.ylabel("Total Value")
+plt.xticks(rotation=0)
+plt.tight_layout()
+
+plt.savefig("all_category_inventory_value.png")
+
+# 파이 차트 생성 (전체 기준)
+plt.figure(figsize=(6, 6))
+all_summary.plot(kind="pie", autopct='%1.1f%%')
+plt.title("Inventory Value Distribution by Category")
+plt.ylabel("")  # y축 제거 (깔끔하게)
+
+plt.savefig("category_distribution_pie.png")
+plt.show()
 
 # 사용자 입력 받기
 threshold = int(input("\n재고 부족 기준 수량을 입력하세요 (예: 10): "))
@@ -40,7 +67,7 @@ print(top_items[["product_name", "category", "total_value"]])
 # 그래프 생성
 plt.figure(figsize=(8, 5))
 category_summary.plot(kind="bar")
-plt.title("Total Inventory Value by Category")
+plt.title(f"{category_input if category_input else 'All'} Category Inventory Value")
 plt.xlabel("Category")
 plt.ylabel("Total Value")
 plt.xticks(rotation=0)

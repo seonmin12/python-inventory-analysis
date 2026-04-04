@@ -123,5 +123,11 @@ python3 main.py
 ---
 ## 📈 Visualization / 시각화
 
-### Category-wise Total Inventory Value / 카테고리별 총 재고 가치
-![Category Inventory Value](category_inventory_value.png)
+#### Bar Chart - Total Inventory Value
+![Bar Chart](all_category_inventory_value.png)
+
+#### Filtered Bar Chart
+![Filtered Chart](category_inventory_value.png)
+
+#### Pie Chart - Category Distribution
+![Pie Chart](category_distribution_pie.png)
